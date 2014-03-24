@@ -12,6 +12,8 @@ A powerful crowdfunding plugin for WordPress.
 
 == Description ==
 
+** Plugin not yet active, no files to download (Updated 3/24/14) **
+
 A crowdfunding plugin for WordPress that features the ability to add an unlimited number of crowdfunding, pre-order, or fundraising projects to your WordPress website. IgnitionDeck works with any of the thousands of themes available for Wordpress, offers an incredible amount of free and premium extensions, and is incredibly easy to customize.
 
 == Installation ==
