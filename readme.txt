@@ -639,7 +639,7 @@ TBD
 = 1.0 Beta3 Updates =
 
 * 'Products' have been renamed to 'Projects'.
-* Language support has been enabled. If you are interested in aiding with translation, please send an email to hello@virtuousgiant.com.
+* Language support has been enabled. If you are interested in aiding with translation, please send an email to hello at virtuousgiant.com.
 * Support for over a dozen new currencies.
 * Added address override setting to fix Paypal shipping issues.
 * Default and custom settings for each project.
