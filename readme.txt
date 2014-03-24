@@ -8,7 +8,7 @@ Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A (free) version of IgnitionDeck, the original crowdfunding plugin for WordPress.
+A free version of IgnitionDeck, the original crowdfunding plugin for WordPress.
 
 == Description ==
 
