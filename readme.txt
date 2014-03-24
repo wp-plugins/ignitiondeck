@@ -4,17 +4,17 @@ Donate link: http://IgnitionDeck.com
 Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising
 Requires at least: 3.2
 Tested up to: 3.8.1
-Stable tag: 
+Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A powerful crowdfunding plugin for WordPress.
 
-** Plugin not yet active, no files to download (Updated 3/24/14) **
+= Plugin not yet active, no files to download (Updated 3/24/14) =
 
 == Description ==
 
-** Plugin not yet active, no files to download (Updated 3/24/14) **
+= Plugin not yet active, no files to download (Updated 3/24/14) =
 
 A crowdfunding plugin for WordPress that features the ability to add an unlimited number of crowdfunding, pre-order, or fundraising projects to your WordPress website. IgnitionDeck works with any of the thousands of themes available for Wordpress, offers an incredible amount of free and premium extensions, and is incredibly easy to customize.
 
