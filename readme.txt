@@ -631,7 +631,7 @@ TBD
 = 1.0 Beta4 Updates =
 
 * Replaced auto-insertion of project data with shortcodes.
-* Language support has been upgraded and includes multiple language files. If you are interested in aiding with translation, please send an email to hello@virtuousgiant.com.
+* Language support has been upgraded and includes multiple language files. If you are interested in aiding with translation, please send an email to hello at virtuousgiant.com.
 * Simplified plugin menu.
 * Added new shortcodes for project content, widgets, and images.
 * Updated internal documentation.
