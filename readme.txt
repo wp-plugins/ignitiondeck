@@ -10,6 +10,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A powerful crowdfunding plugin for WordPress.
 
+** Plugin not yet active, no files to download (Updated 3/24/14) **
+
 == Description ==
 
 ** Plugin not yet active, no files to download (Updated 3/24/14) **
