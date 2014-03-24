@@ -8,11 +8,19 @@ Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A powerful crowdfunding plugin for WordPress.
+A (free) version of IgnitionDeck, a powerful crowdfunding plugin for WordPress.
 
 == Description ==
 
 A crowdfunding plugin for WordPress that features the ability to add an unlimited number of crowdfunding, pre-order, or fundraising projects to your WordPress website. IgnitionDeck works with any of the thousands of themes available for Wordpress, offers an incredible amount of free and premium extensions, and is incredibly easy to customize.
+
+This is the free version of IgnitionDeck and includes the following features:
+
+* Create an unlimited number of crowdfunding projects
+* Use the WordPress widgets to display the crowdfunding deck (full or mini) for the projects you wish to display
+* Use the IgnitionDeck->Orders->Add Order feature to add orders manually
+
+[Upgrade](http://ignitiondeck.com/id/ignitiondeck-pricing) and you'll have access to the complete set of project shortcodes and full commerce functionality.
 
 == Installation ==
 
