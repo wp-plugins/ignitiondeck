@@ -20,7 +20,7 @@ This is the free version of IgnitionDeck and includes the following features:
 * Use the WordPress widgets to display the crowdfunding deck (full or mini) for the projects you wish to display
 * Use the IgnitionDeck->Orders->Add Order feature to add orders manually
 
-[Upgrade](http://ignitiondeck.com/id/ignitiondeck-pricing) and you'll have access to the complete set of project shortcodes and full commerce functionality.
+[Upgrade](http://ignitiondeck.com/id/ignitiondeck-pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) and you'll have access to the complete set of project shortcodes and full commerce functionality.
 
 == Installation ==
 
