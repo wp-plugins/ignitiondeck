@@ -36,6 +36,10 @@ Download our [free crowdfunding theme](http://ignitiondeck.com/id/wordpress-crow
 
 Premium support is available via our [product forums](http://forums.ignitiondeck.com/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium)
 
+* Developers *
+
+Grab code snippets, child theming guides, and API information on our [developer resources](http://ignitiondeck.com/id/resources?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) page.
+
 == Installation ==
 
 http://docs.ignitiondeck.com
