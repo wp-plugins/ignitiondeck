@@ -32,6 +32,8 @@ IgnitionDeck Works with any WordPress theme, which means you don’t have to buy
 
 Download our [free crowdfunding theme](http://ignitiondeck.com/id/wordpress-crowdfunding-theme/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) and you’ll have even more options, including gorgeous crowdfunding project pages, project grids, and project archives.
 
+**[Demo](http://demo.ignitiondeck.com/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium)**
+
 ###Support###
 
 Premium support is available via our [product forums](http://forums.ignitiondeck.com/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium)
