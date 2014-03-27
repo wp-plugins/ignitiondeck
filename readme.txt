@@ -24,17 +24,21 @@ This is the free version of IgnitionDeck and includes the following features:
 
 [Upgrade](http://ignitiondeck.com/id/ignitiondeck-pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) and you'll have access to the complete set of project shortcodes and full commerce functionality.
 
-* No Theme Required *
+*No Theme Required*
 
 IgnitionDeck Works with any WordPress theme, which means you don’t have to buy a new theme to get started.
 
-* Free Crowdfunding Theme *
+*Free Crowdfunding Theme*
 
 Download our [free crowdfunding theme](http://ignitiondeck.com/id/wordpress-crowdfunding-theme/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) and you’ll have even more options, including gorgeous crowdfunding project pages, project grids, and project archives.
 
-* Support *
+*Support*
 
 Premium support is available via our [product forums](http://forums.ignitiondeck.com/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium)
+
+*Developers*
+
+Grab code snippets, child theming guides, and API information on our [developer resources](http://ignitiondeck.com/id/resources?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) page.
 
 == Installation ==
 
