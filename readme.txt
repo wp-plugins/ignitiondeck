@@ -12,7 +12,9 @@ A free version of IgnitionDeck, the original crowdfunding plugin for WordPress.
 
 == Description ==
 
-A crowdfunding plugin for WordPress that features the ability to add an unlimited number of crowdfunding, pre-order, or fundraising projects to your WordPress website. IgnitionDeck works with any of the thousands of themes available for Wordpress, offers an incredible amount of free and premium extensions, and is incredibly easy to customize.
+A crowdfunding plugin for WordPress that features the ability to add an unlimited number of crowdfunding, pre-order, or fundraising projects to your WordPress website.
+
+IgnitionDeck works with any of the thousands of themes available for Wordpress, offers an incredible amount of free and premium extensions, and is incredibly easy to customize.
 
 This is the free version of IgnitionDeck and includes the following features:
 
@@ -21,6 +23,18 @@ This is the free version of IgnitionDeck and includes the following features:
 * Use the IgnitionDeck->Orders->Add Order feature to add orders manually
 
 [Upgrade](http://ignitiondeck.com/id/ignitiondeck-pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) and you'll have access to the complete set of project shortcodes and full commerce functionality.
+
+* No Theme Required *
+
+IgnitionDeck Works with any WordPress theme, which means you don’t have to buy a new theme to get started.
+
+* Free Crowdfunding Theme *
+
+Download our [free crowdfunding theme](http://ignitiondeck.com/id/wordpress-crowdfunding-theme/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) and you’ll have even more options, including gorgeous crowdfunding project pages, project grids, and project archives.
+
+* Support *
+
+Premium support is available via our [product forums](http://forums.ignitiondeck.com/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium)
 
 == Installation ==
 
