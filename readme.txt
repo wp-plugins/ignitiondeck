@@ -1,4 +1,4 @@
-=== IgnitionDeck ===
+=== IgnitionDeck Framework ===
 Contributors: virtuousgiant
 Donate link: http://IgnitionDeck.com
 Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising
