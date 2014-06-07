@@ -4,7 +4,7 @@ Donate link: http://IgnitionDeck.com
 Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising
 Requires at least: 3.2
 Tested up to: 3.8.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,12 @@ http://docs.ignitiondeck.com
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Update directory paths for new IgnitionDeck Crowdfunding structure and menu items
+* Introduce textdomain for purpose of translation/s
+* Update po/mo files
 
 = 1.0 =
 
