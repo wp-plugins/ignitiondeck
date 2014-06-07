@@ -22,7 +22,7 @@ function idf_registered() {
 		$idcf_zip = new ZipArchive;
 		$idcf_zip_res = $idcf_zip->open($plugins_path.'idcf_latest.zip');
 		if ($idcf_zip_res) {
-			if (!file_exists($plugins_path.'ignitiondeck')) {
+			if (!file_exists($plugins_path.'ignitiondeck-crowdfunding')) {
 				$idcf_zip->extractTo($plugins_path);
 				$idcf_zip->close();
 			}
