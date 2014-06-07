@@ -42,7 +42,7 @@ function idf_registered() {
 		}
 	}
 	// 3
-	activate_plugin($plugins_path.'ignitiondeck/ignitiondeck.php');
+	activate_plugin($plugins_path.'ignitiondeck-crowdfunding/ignitiondeck.php');
 }
 
 add_action('wp_ajax_idf_registered', 'idf_registered');
