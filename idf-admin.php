@@ -3,7 +3,7 @@ add_action('admin_menu', 'idf_admin_menus');
 
 function idf_admin_menus() {
 	if (current_user_can('manage_options')) {
-		$home = add_menu_page(__('IgnitionDeck', 'idf'), __('IgnitionDeck', 'idf'), 'manage_options', 'idf', 'idf_main_menu', plugins_url( '/idf/images/ignitiondeck-menu.png', DIRNAME(__FILE__) ));
+		$home = add_menu_page(__('IgnitionDeck', 'idf'), __('IgnitionDeck', 'idf'), 'manage_options', 'idf', 'idf_main_menu', plugins_url( '/images/ignitiondeck-menu.png', __FILE__ ));
 		$theme_list = add_submenu_page( 'idf', __('Themes', 'ignitiondeck'), __('Themes', 'ignitiondeck'), 'manage_options', 'idf-themes', 'idf_theme_list');
 		$extension_list = add_submenu_page( 'idf', __('Extensions', 'ignitiondeck'), __('Extensions', 'ignitiondeck'), 'manage_options', 'idf-extensions', 'idf_extension_list');
 		$menu_array = array($home,

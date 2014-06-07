@@ -19,6 +19,11 @@ include_once 'classes/class-idf.php';
 include_once 'idf-functions.php';
 include_once 'idf-admin.php';
 
+add_action( 'init', 'idf_textdomain' );
+function idf_textdomain() {
+	load_plugin_textdomain( 'idf', false, dirname( plugin_basename( __FILE__ ) ).'/languages/' );
+}
+
 add_action('init', 'idf_lightbox');
 
 function idf_lightbox() {
