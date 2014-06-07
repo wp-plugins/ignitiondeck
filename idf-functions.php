@@ -1,6 +1,6 @@
 <?php
 function idf_platform() {
-	$platform = get_option('idf_commerce_platform', true);
+	$platform = get_option('idf_commerce_platform', 'legacy');
 	return $platform;
 }
 
