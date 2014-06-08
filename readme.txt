@@ -54,6 +54,10 @@ http://docs.ignitiondeck.com
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Fix bug causing "scalar value as array" error if platform not saved
+
 = 1.0.1 =
 
 * Update directory paths for new IgnitionDeck Crowdfunding structure and menu items
