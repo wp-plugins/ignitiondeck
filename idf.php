@@ -27,7 +27,7 @@ function idf_textdomain() {
 add_action('init', 'idf_lightbox');
 
 function idf_lightbox() {
-	$platform = get_option('idf_commerce_platform', true);
+	$platform = idf_platform();
 	if ($platform == 'wc' && class_exists('WooCommerce') && !is_admin()) {
 		global $woocommerce;
 		$checkout_url = $woocommerce->cart->get_checkout_url();

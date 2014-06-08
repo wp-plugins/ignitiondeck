@@ -18,7 +18,7 @@ function idf_admin_menus() {
 
 function idf_main_menu() {
 	$idf_registered = get_option('idf_registered');
-	$platform = get_option('idf_commerce_platform', true);
+	$platform = idf_platform();
 	if (isset($_POST['commerce_submit'])) {
 		$platform = esc_attr($_POST['commerce_selection']);
 		update_option('idf_commerce_platform', $platform);
