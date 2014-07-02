@@ -44,9 +44,11 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Installation ==
 
-http://docs.ignitiondeck.com
+[IgnitionDeck Crowdfunding Documentation](http://docs.ignitiondeck.com)
 
 == Frequently Asked Questions ==
+
+[IgnitionDeck FAQ](http://ignitiondeck.com/id/ignitiondeck-pricing#bigfaq)
 
 == Upgrade Notice ==
 
