@@ -40,19 +40,30 @@ jQuery(document).ready(function() {
 
 	}
 	jQuery.each(jQuery('.id-full .btn-container a, .level-binding, .ign-supportnow a'), function() {
-		if (jQuery(this).attr('href').length > 1) {
-			jQuery(this).attr('href', '.idc_lightbox');
+		var href = jQuery(this).attr('href');
+		if (href !== undefined) {
+			if (jQuery(this).attr('href').length > 1) {
+				jQuery(this).attr('href', '.idc_lightbox');
+				jQuery(this).data('href', href);
+			}
 		}
 	});
 	//jQuery('.id-full .btn-container a, .level-binding, .ign-supportnow a').attr('href', '.idc_lightbox');
 	jQuery('.id-full .btn-container a, .ign-supportnow a').click(function(e) {
+		var href = jQuery(this).data('href');
 		if (jQuery(this).attr('href') == '.idc_lightbox') {
 			e.preventDefault();
-			jQuery(this).parents().each(function() {
+			var parentsCount = jQuery(this).parents().size();
+			jQuery(this).parents().each(function(k, v) {
 				if (jQuery(this).find('.idc_lightbox').length > 0) {
 					var lbSource = jQuery(this).find('.idc_lightbox');
 					openLB(lbSource, null);
 					return false;
+				}
+				else {
+					if (href !== undefined && k == (parentsCount - 1)) {
+						location.href=href;
+					}
 				}
 			});
 		}
@@ -103,11 +114,22 @@ jQuery(document).ready(function() {
 					}
 					var levelCount = jQuery('.idc_lightbox:visible select[name="level_select"] option').size();
 					if (levelCount == 1) {
-						jQuery('.idc_lightbox:visible .lb_level_submit').click();
+						//jQuery('.idc_lightbox:visible .lb_level_submit').click();
+						var selLevel = jQuery('.idc_lightbox:visible select[name="level_select"]').val();
+						var price = jQuery('.idc_lightbox:visible input.total').val();
+						if (price == 0 || price == undefined) {
+							//pwyw project
+						}
 					}
 					else {
 
 					}
+					jQuery('.idc_lightbox:visible input[name="total"]').change(function() {
+						var price = jQuery(this).val();
+						var cleanPrice = price.replace(/[^0-9\.]+/g, '');
+						console.log(cleanPrice);
+						jQuery(document).trigger('idc_lightbox_price_change', cleanPrice);
+					});
 				},
 				close: function() {
 					
@@ -115,10 +137,24 @@ jQuery(document).ready(function() {
 			}
 		});
 	}
+	jQuery(document).bind('idc_lightbox_price_change', function(event, price) {
+		jQuery('.idc_lightbox:visible input[name="total"]').val(price);
+		var levelIndex = jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex');
+		var levelPrice = jQuery('.idc_lightbox:visible select[name="level_select"] option').eq(levelIndex).data('price');
+		if (price < levelPrice) {
+			jQuery('.idc_lightbox:visible input[name="total"]').val(levelPrice);
+		}
+	});
 	jQuery('input[name="lb_level_submit"]').click(function(e) {
 		e.preventDefault();
+		jQuery('.idc_lightbox:visible input.total').removeClass('error');
 		var selLevel = jQuery('.idc_lightbox:visible select[name="level_select"]').val();
-		var price = jQuery('.idc_lightbox:visible span.total').data('value');
+		var price = jQuery('.idc_lightbox:visible input.total').val();
+		var pwyw = true;
+		if (price == undefined) {
+			var price = jQuery('.idc_lightbox:visible span.total').data('value');
+			var pwyw = false;
+		}
 		var formAction = jQuery('.idc_lightbox:visible form').attr('action');
 		var productID = jQuery('.idc_lightbox:visible select[name="level_select"] option:selected').data('id');
 		if (idf_platform == 'wc') {
@@ -134,6 +170,19 @@ jQuery(document).ready(function() {
 			formAction = formAction + '&level=' + selLevel + '&price=' + price;
 		}
 		jQuery('.idc_lightbox:visible form').attr('action', formAction);
-		jQuery('.idc_lightbox:visible form').submit();
+		var error = false;
+		if (pwyw) {
+			if (price <= 0) {
+				var levelIndex = jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex');
+				var levelPrice = jQuery('.idc_lightbox:visible select[name="level_select"] option').eq(levelIndex).data('price');
+				if (levelPrice !== 0) {
+					jQuery('.idc_lightbox:visible input.total').addClass('error');
+					error = true;
+				}
+			}
+		}
+		if (!error) {
+			jQuery('.idc_lightbox:visible form').submit();
+		}
 	});
 });

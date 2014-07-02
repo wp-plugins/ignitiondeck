@@ -4,6 +4,13 @@ function idf_platform() {
 	return $platform;
 }
 
+function idf_enable_checkout() {
+	if (class_exists('ID_Project') && is_id_licensed()) {
+		return true;
+	}
+	return false;
+}
+
 function idf_registered() {
 	/*
 	1. Set option with any login info we need and keep logged in
@@ -22,7 +29,7 @@ function idf_registered() {
 		$idcf_zip = new ZipArchive;
 		$idcf_zip_res = $idcf_zip->open($plugins_path.'idcf_latest.zip');
 		if ($idcf_zip_res) {
-			if (!file_exists($plugins_path.'ignitiondeck-crowdfunding')) {
+			if (!file_exists($plugins_path.'ignitiondeck')) {
 				$idcf_zip->extractTo($plugins_path);
 				$idcf_zip->close();
 			}
@@ -42,7 +49,7 @@ function idf_registered() {
 		}
 	}
 	// 3
-	activate_plugin($plugins_path.'ignitiondeck-crowdfunding/ignitiondeck.php');
+	activate_plugin($plugins_path.'ignitiondeck/ignitiondeck.php');
 }
 
 add_action('wp_ajax_idf_registered', 'idf_registered');

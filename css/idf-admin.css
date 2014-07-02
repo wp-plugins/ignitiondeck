@@ -2,16 +2,16 @@
     max-width: 975px
 }
 .ignitiondeck_page_idf-extensions .extension {
-	display: inline-block;
-	width: 200px;
+    display: inline-block;
+    width: 200px;
     vertical-align: top;
-	border-right: 1px solid #eee;
+    border-right: 1px solid #eee;
     padding-left: 20px;
     padding-right: 20px;
     margin: 30px 0 10px 0;
 } 
 .ignitiondeck_page_idf-extensions .extension-title {
-	text-align: center;
+    text-align: center;
     font-weight: lighter;
     font-size: 130%;
     border-top: 1px solid #eee;
@@ -19,7 +19,7 @@
     padding: 20px 0 0 0;
 } 
 .ignitiondeck_page_idf-extensions .extension-desc {
-	text-align: left;
+    text-align: left;
     padding: 0 0px;
     height: 70px;
     overflow: scroll;
@@ -37,7 +37,7 @@
     
 } 
 .ignitiondeck_page_idf-extensions .extension img {
-	text-align: left;
+    text-align: left;
     padding: 0 10px;
     margin: 0 auto;
     display: block;
@@ -47,7 +47,7 @@
     max-width: 160px;
 } 
 .ignitiondeck_page_idf-extensions .extension-link {
-	text-align: center;
+    text-align: center;
 }
 
 .ignitiondeck_page_idf-themes .wrap {

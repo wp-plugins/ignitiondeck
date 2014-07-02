@@ -54,6 +54,15 @@ http://docs.ignitiondeck.com
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Hide Legacy IgnitionDeck Crowdfunding menus when non-Legacy platforms are enabled
+* Do not modify href attributes that do not exist, such as when levels are sold out or closed
+* Add functionality and integrate with upcoming IgnitionDeck Commerce pledge what you want feature
+* Only load functionality of IgnitionDeck Crowdfunding is enabled and registered
+* Add data-href attribute to lightbox levels that can be accessed when necessary
+* Remove lightbox support for Legacy PWYW functionality
+
 = 1.0.2 =
 
 * Fix bug causing "scalar value as array" error if platform not saved
