@@ -82,15 +82,18 @@ jQuery(document).ready(function() {
 	});*/
 	jQuery('.level-binding').click(function(e) {
 		e.preventDefault();
-		var clickLevel = jQuery(this).index();
-		jQuery(this).parents().each(function() {
-			if (jQuery(this).children('.idc_lightbox').length > 0) {
-				var lbSource = jQuery(this).children('.idc_lightbox');
-				//console.log(lbSource);
-				openLB(lbSource, clickLevel);
-				return false;
-			}
-		});
+		var href = jQuery(this).data('href');
+		if (jQuery(this).attr('href') == '.idc_lightbox') {
+			var clickLevel = jQuery(this).index();
+			jQuery(this).parents().each(function() {
+				if (jQuery(this).children('.idc_lightbox').length > 0) {
+					var lbSource = jQuery(this).children('.idc_lightbox');
+					//console.log(lbSource);
+					openLB(lbSource, clickLevel);
+					return false;
+				}
+			});
+		}
 	});
 	function openLB(lbSource, clickLevel) {
 		jQuery.magnificPopup.open({
