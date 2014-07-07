@@ -14,7 +14,7 @@
 							<div class="form-select form-row">
 								<?php if (!isset($idf_registered) || !$idf_registered) { ?>
 								<p><?php _e('Register for an IgnitionDeck account in order to activate crowdfunding functionality.', 'idf'); ?></p>
-								<a href="http://ignitiondeck.com/id/id-free-registration/" class="button button-large button-primary" id="id_account" name="id_account"><?php _e('Register', 'idf'); ?></a>
+								<a href="http://ignitiondeck.com/id/id-launchpad-checkout/" class="button button-large button-primary" id="id_account" name="id_account"><?php _e('Register', 'idf'); ?></a>
 								<?php } else { ?>
 								<div class="getting_started">
 									<p><?php _e('You have registered successfully, and IgnitionDeck has been installed and activated.', 'idf'); ?></p>
