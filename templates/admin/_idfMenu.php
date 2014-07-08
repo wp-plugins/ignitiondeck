@@ -32,7 +32,7 @@
 					</div>
 					<?php if (class_exists('ID_Project')) { ?>
 					<div class="postbox">
-						<h3 class="hndle"><span><?php _e('Commerce Settings', 'idf'); ?></span></h3>
+						<h3 class="hndle"><span><?php _e('IDCF Commerce Settings', 'idf'); ?></span></h3>
 						<div class="inside">
 							<form id="idf_commerce" name="idf_commerce" method="POST" action="">
 								<div class="form-select form-row">

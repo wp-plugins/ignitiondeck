@@ -7,7 +7,7 @@
 Plugin Name: IgnitionDeck Framework
 URI: http://IgnitionDeck.com
 Description: An e-commerce toolkit for WordPress
-Version: 1.0.4
+Version: 1.0.3
 Author: Virtuous Giant
 Author URI: http://VirtuousGiant.com
 License: GPL2
@@ -27,6 +27,10 @@ function idf_textdomain() {
 add_action('init', 'idf_lightbox');
 
 function idf_lightbox() {
+	wp_register_script('idf', plugins_url('js/idf.js', __FILE__));
+	wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
+	wp_register_script('magnific', plugins_url('lib/magnific/magnific.js', __FILE__));
+	wp_register_style('idf', plugins_url('css/idf.css', __FILE__));
 	if (idf_enable_checkout()) {
 		$platform = idf_platform();
 		if ($platform == 'wc' && class_exists('WooCommerce') && !is_admin()) {
@@ -36,13 +40,8 @@ function idf_lightbox() {
 		else if ($platform == 'edd' && class_exists('Easy_Digital_Downloads') && !is_admin()) {
 			$checkout_url = edd_get_checkout_uri();
 		}
-		wp_register_script('idf', plugins_url('js/idf.js', __FILE__));
-		wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
-		wp_register_script('magnific', plugins_url('lib/magnific/magnific.js', __FILE__));
-		wp_register_style('idf', plugins_url('css/idf.css', __FILE__));
 		wp_enqueue_style('magnific');
 		wp_enqueue_style('idf');
-		wp_enqueue_script('jquery');
 		wp_enqueue_script('idf');
 		wp_enqueue_script('magnific');
 		wp_localize_script('idf', 'idf_platform', $platform);

@@ -56,6 +56,12 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.0.5 =
+
+* Load lightbox via admin_enqueue in the event IDCF is not licensed
+* Create new localized admin variables for ajax URL and site URL for use with admin javascript
+* Modify menu text
+
 = 1.0.4 =
 
 * Update registration page link

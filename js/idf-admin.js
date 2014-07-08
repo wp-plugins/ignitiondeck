@@ -27,7 +27,7 @@ jQuery(document).ready(function() {
 		e.preventDefault();
 		var slug = jQuery(this).data('theme');
 		jQuery.ajax({
-			url: idf_ajaxurl,
+			url: idf_admin_ajaxurl,
 			type: 'POST',
 			data: {action: 'idf_activate_theme', theme: slug},
 			success: function(res) {
@@ -46,7 +46,7 @@ function idfRegister(e) {
 		setTimeout(function() {
 			jQuery.magnificPopup.close();
 			jQuery.ajax({
-				url: idf_ajaxurl,
+				url: idf_admin_ajaxurl,
 				type: 'POST',
 				data: {action: 'idf_registered'},
 				success: function(res) {
