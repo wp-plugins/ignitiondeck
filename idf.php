@@ -31,6 +31,7 @@ function idf_lightbox() {
 	wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
 	wp_register_script('magnific', plugins_url('lib/magnific/magnific.js', __FILE__));
 	wp_register_style('idf', plugins_url('css/idf.css', __FILE__));
+	wp_enqueue_script('jquery');
 	if (idf_enable_checkout()) {
 		$platform = idf_platform();
 		if ($platform == 'wc' && class_exists('WooCommerce') && !is_admin()) {
