@@ -21,7 +21,6 @@
 		}
 		?>
 		<div class="extension">
-			<!--<h3 class="extension-title"><?php echo $title; ?></h3>-->
 			<div class="extension-image" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
 			<p class="extension-desc"><?php echo $desc; ?></p>
 			<div class="extension-link">

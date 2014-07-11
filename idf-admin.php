@@ -19,9 +19,19 @@ function idf_admin_menus() {
 function idf_main_menu() {
 	$idf_registered = get_option('idf_registered');
 	$platform = idf_platform();
+	$plugins_path = plugin_dir_path(dirname(__FILE__));
 	if (isset($_POST['commerce_submit'])) {
 		$platform = esc_attr($_POST['commerce_selection']);
 		update_option('idf_commerce_platform', $platform);
+	}
+	if (isset($_POST['update_idcf'])) {
+		if (file_exists($plugins_path.'ignitiondeck-crowdfunding')) {
+			deactivate_plugins($plugins_path.'ignitiondeck-crowdfunding/ignitiondeck.php');
+			$dir = $plugins_path.'ignitiondeck-crowdfunding';
+			rrmdir($dir);
+		}
+		idf_idcf_delivery();
+		echo '<script>location.href="'.site_url('/wp-admin/admin.php?page=idf').'";</script>';
 	}
 	include_once 'templates/admin/_idfMenu.php';
 }
@@ -83,8 +93,8 @@ add_action('admin_init', 'filter_idcf_admin');
 
 function filter_idcf_admin() {
 	$platform = idf_platform();
-	if ($platform !== 'legacy') {
-		remove_submenu_page('ignitiondeck', 'project-settings');
+	if (!empty($platform) && $platform !== 'legacy') {
+		//remove_submenu_page('ignitiondeck', 'project-settings');
 		remove_submenu_page('ignitiondeck', 'payment-options');
 		remove_submenu_page('ignitiondeck', 'custom-settings');
 		add_filter('idcf_project_settings_tab', 'filter_idcf_project_settings_tab');

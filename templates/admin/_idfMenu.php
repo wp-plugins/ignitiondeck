@@ -47,12 +47,24 @@
 									</p>
 								</div>
 								<div class="form-input">
-									<input type="submit" name="commerce_submit" class="button button-primary"/>
+									<input type="submit" name="commerce_submit" class="button button-primary" value="<?php _e('Save', 'idf'); ?>"/>
 								</div>
 							</form>
 						</div>
 					</div>
 					<?php } ?>
+					<div class="postbox">
+						<h3 class="hndle"><span><?php _e('Updates', 'idf'); ?></span></h3>
+						<div class="inside">
+							<form id="idf_updates" name="idf_updates" method="POST" action="">
+								<p><?php _e('Automatically updates IgnitionDeck plugins and themes', 'idf'); ?></p>
+								<div class="form-input">
+									<p><strong><?php _e('IgnitionDeck Crowdfunding', 'idf'); ?></strong></p>
+									<input type="submit" name="update_idcf" class="button" value="<?php _e('Update IDCF', 'idf'); ?>"/>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
