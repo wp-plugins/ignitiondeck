@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: IgnitionDeck Framework\n"
-"POT-Creation-Date: 2014-06-06 23:18-0500\n"
-"PO-Revision-Date: 2014-06-06 23:18-0500\n"
+"POT-Creation-Date: 2014-07-11 14:38-0500\n"
+"PO-Revision-Date: 2014-07-11 14:38-0500\n"
 "Last-Translator: Nathan Hangen <nhangen@gmail.com>\n"
 "Language-Team: IgnitionDeck <hello@virtuousgiant.com>\n"
 "Language: en_US\n"
@@ -17,19 +17,21 @@ msgstr ""
 
 #: .././idf-admin.php:6
 msgid "IgnitionDeck"
-msgstr ""
+msgstr "IgnitionDeck"
 
 #: .././idf-admin.php:7
+#, fuzzy
 msgid "Themes"
-msgstr ""
+msgstr "Themes"
 
 #: .././idf-admin.php:8
 msgid "Extensions"
-msgstr ""
+msgstr "Extensions"
 
 #: .././templates/admin/_extensionList.php:2
+#, fuzzy
 msgid "IgnitionDeck Extensions"
-msgstr ""
+msgstr "IgnitionDeck Extensions"
 
 #: .././templates/admin/_extensionList.php:12
 msgid "Get Plugin"
@@ -38,25 +40,27 @@ msgstr ""
 #: .././templates/admin/_extensionList.php:16
 #: .././templates/admin/_themeList.php:15
 #: .././templates/admin/_themeList.php:29
+#, fuzzy
 msgid "Activate"
-msgstr ""
+msgstr "Activate"
 
 #: .././templates/admin/_extensionList.php:19
 #: .././templates/admin/_themeList.php:18
 msgid "Configure"
-msgstr ""
+msgstr "Configure"
 
 #: .././templates/admin/_idfMenu.php:2
+#, fuzzy
 msgid "IgnitionDeck Framework"
-msgstr ""
+msgstr "IgnitionDeck Framework"
 
 #: .././templates/admin/_idfMenu.php:4
 msgid "Support"
-msgstr ""
+msgstr "Support"
 
 #: .././templates/admin/_idfMenu.php:5
 msgid "Documentation"
-msgstr ""
+msgstr "Documentation"
 
 #: .././templates/admin/_idfMenu.php:12
 msgid "IgnitionDeck Account"
@@ -90,15 +94,16 @@ msgstr ""
 
 #: .././templates/admin/_idfMenu.php:24
 msgid "Activate Theme 500"
-msgstr ""
+msgstr "Activate Theme 500"
 
 #: .././templates/admin/_idfMenu.php:24
 msgid ", if you wish to use it"
 msgstr ""
 
 #: .././templates/admin/_idfMenu.php:25
+#, fuzzy
 msgid "Configure IgnitionDeck"
-msgstr ""
+msgstr "Configure IgnitionDeck"
 
 #: .././templates/admin/_idfMenu.php:26
 msgid "Create your first project"
@@ -106,31 +111,36 @@ msgstr ""
 
 #: .././templates/admin/_idfMenu.php:35
 msgid "Commerce Settings"
-msgstr ""
+msgstr "Commerce Settings"
 
 #: .././templates/admin/_idfMenu.php:39
 msgid "Commerce Platform"
-msgstr ""
+msgstr "Commerce Platform"
 
 #: .././templates/admin/_idfMenu.php:42
+#, fuzzy
 msgid "IgnitionDeck Commerce"
-msgstr ""
+msgstr "IgnitionDeck Commerce"
 
 #: .././templates/admin/_idfMenu.php:43
+#, fuzzy
 msgid "WooCommerce"
-msgstr ""
+msgstr "WooCommerce"
 
 #: .././templates/admin/_idfMenu.php:44
+#, fuzzy
 msgid "Easy Digital Downloads"
-msgstr ""
+msgstr "Easy Digital Downloads"
 
 #: .././templates/admin/_idfMenu.php:45
+#, fuzzy
 msgid "Legacy IgnitionDeck"
-msgstr ""
+msgstr "Legacy IgnitionDeck"
 
 #: .././templates/admin/_themeList.php:2
+#, fuzzy
 msgid "IgnitionDeck Themes"
-msgstr ""
+msgstr "IgnitionDeck Themes"
 
 #: .././templates/admin/_themeList.php:10
 msgid "Get Theme"
