@@ -56,6 +56,12 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.0.7 =
+
+* Add js function to resize text dynamically
+* Disable lightbox submission if no levels are available
+* Minor styling updates to lightbox
+
 = 1.0.6 =
 
 * Fix IgnitionDeck Crowdfunding download and activation script so that plugin can be automatically downloaded and activated

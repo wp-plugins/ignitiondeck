@@ -46,7 +46,10 @@
 }
 
 .idc_lightbox .lb_wrapper {
-	padding: 30px 40px;
+	padding: 30px 0;
+	box-sizing: border-box;
+	width: 90%;
+	margin: 0 auto;
 }
 .ignitiondeck.idc_lightbox form {
 	margin: 0;
@@ -158,3 +161,4 @@
 }
 .idc_lightbox button.mfp-close {
 }
+.ignitiondeck form .form-row.twothird, .ignitiondeck form .twothird { width: 65.66% !important; }
