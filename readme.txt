@@ -56,6 +56,10 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.0.8 =
+
+* Add js for lite version so that adjustHeights is not undefined
+
 = 1.0.7 =
 
 * Add js function to resize text dynamically
