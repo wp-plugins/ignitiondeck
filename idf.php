@@ -7,7 +7,7 @@
 Plugin Name: IgnitionDeck Framework
 URI: http://IgnitionDeck.com
 Description: An e-commerce toolkit for WordPress
-Version: 1.0.7
+Version: 1.0.8
 Author: Virtuous Giant
 Author URI: http://VirtuousGiant.com
 License: GPL2
@@ -27,6 +27,7 @@ function idf_textdomain() {
 add_action('init', 'idf_lightbox');
 
 function idf_lightbox() {
+	wp_register_script('idf-lite', plugins_url('js/idf-lite.js', __FILE__));
 	wp_register_script('idf', plugins_url('js/idf.js', __FILE__));
 	wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
 	wp_register_script('magnific', plugins_url('lib/magnific/magnific.js', __FILE__));
@@ -53,6 +54,9 @@ function idf_lightbox() {
 		if (isset($checkout_url)) {
 			wp_localize_script('idf', 'idf_checkout_url', $checkout_url);
 		}
+	}
+	else {
+		wp_enqueue_script('idf-lite');
 	}
 	wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
 	wp_enqueue_style('magnific');
