@@ -97,7 +97,7 @@ function filter_idcf_admin() {
 		//remove_submenu_page('ignitiondeck', 'project-settings');
 		remove_submenu_page('ignitiondeck', 'payment-options');
 		remove_submenu_page('ignitiondeck', 'custom-settings');
-		add_filter('idcf_project_settings_tab', 'filter_idcf_project_settings_tab');
+		//add_filter('idcf_project_settings_tab', 'filter_idcf_project_settings_tab');
 		add_filter('idcf_custom_settings_tab', 'filter_idcf_custom_settings_tab');
 		add_filter('idcf_payment_settings_tab', 'filter_idcf_payment_settings_tab');
 		remove_action('add_meta_boxes', 'add_ty_url');
