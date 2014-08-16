@@ -76,6 +76,18 @@ function idf_theme_list() {
 	include_once 'templates/admin/_themeList.php';
 }
 
+add_action('admin_enqueue_scripts', 'idf_additional_enqueues');
+
+function idf_additional_enqueues() {
+	global $post;
+	if (isset($post->post_type) && $post->post_type == 'ignition_product') {
+		$platform = idf_platform();
+		if (empty($platform) || $platform !== 'legacy') {
+			idf_admin_enqueues();
+		}
+	}
+}
+
 function idf_admin_enqueues() {
 	wp_register_script('idf-admin', plugins_url('/js/idf-admin.js', __FILE__));
 	wp_register_style('idf-admin', plugins_url('/css/idf-admin.css', __FILE__));

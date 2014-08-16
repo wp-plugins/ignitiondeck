@@ -38,6 +38,11 @@ jQuery(document).ready(function() {
 			}
 		});
 	});
+	// new / edit post page
+	if (idf_platform !== 'legacy') {
+		jQuery('input[value="pwyw"]').attr('disabled', 'disabled');
+	}
+
 });
 function idfRegister(e) {
 	//console.log(e.data);
