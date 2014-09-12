@@ -38,6 +38,21 @@ jQuery(document).ready(function() {
 			}
 		});
 	});
+	// Extensions Page
+	jQuery('.extension-link .active-installed').click(function(e) {
+		e.preventDefault();
+		var extension = jQuery(this).data('extension');
+		jQuery.ajax({
+			url: idf_admin_ajaxurl,
+			type: 'POST',
+			data: {action: 'idf_activate_extension', extension: extension},
+			success: function(res) {
+				if (res == 1) {
+					location.reload();
+				}
+			}
+		});
+	});
 	// new / edit post page
 	if (idf_platform !== 'legacy') {
 		jQuery('input[value="pwyw"]').attr('disabled', 'disabled');
