@@ -1,0 +1,99 @@
+.ignitiondeck_page_idf-extensions .wrap {
+    max-width: 975px
+}
+.ignitiondeck_page_idf-extensions .extension {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    border-right: 1px solid #eee;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 30px 0 10px 0;
+} 
+.ignitiondeck_page_idf-extensions .extension-title {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 130%;
+    border-top: 1px solid #eee;
+    margin: -20px 0 0 0;
+    padding: 20px 0 0 0;
+} 
+.ignitiondeck_page_idf-extensions .extension-desc {
+    text-align: left;
+    padding: 0 0px;
+    height: 70px;
+    overflow: scroll;
+    line-height: 100%;
+}
+.ignitiondeck_page_idf-extensions .extension-image {
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    width: auto;
+    max-width: 160px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+} 
+.ignitiondeck_page_idf-extensions .extension img {
+    text-align: left;
+    padding: 0 10px;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+    width: auto;
+    max-height: 60px;
+    max-width: 160px;
+} 
+.ignitiondeck_page_idf-extensions .extension-link {
+    text-align: center;
+}
+
+.ignitiondeck_page_idf-themes .wrap {
+    max-width: 1043px;
+}
+.ignitiondeck_page_idf-themes .extension {
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
+    border-right: 1px solid #eee;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 30px 0 10px 0;
+} 
+.ignitiondeck_page_idf-themes .extension-title {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 130%;
+    border-top: 1px solid #eee;
+    margin: -20px 0 0 0;
+    padding: 20px 0 0 0;
+}
+.ignitiondeck_page_idf-themes .extension-desc {
+    text-align: left;
+    padding: 0 0px;
+    height: 70px;
+    overflow: scroll;
+    line-height: 100%;
+}
+.ignitiondeck_page_idf-themes .extension-image {
+    margin: 0 auto;
+    display: block;
+    height: 152px;
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    
+} 
+.ignitiondeck_page_idf-themes .extension img {
+    text-align: left;
+    margin: 0 auto;
+    display: block;
+    height: 152px;
+    width: 300px;
+} 
+.ignitiondeck_page_idf-themes .extension-link {
+    text-align: center;
+}
