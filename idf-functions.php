@@ -64,6 +64,22 @@ function rrmdir($dir) {
 	}
 }
 
+function idf_pw_gen($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
+}
+
+function idf_sharing_settings() {
+	if (class_exists('ID_Project')) {
+		$settings = ID_Project::get_id_settings();
+	}
+	return (!empty($settings) ? $settings : null);
+}
+
 function idf_registered() {
 	idf_idcf_delivery();
 	idf_fh_delivery();
@@ -86,4 +102,19 @@ function idf_activate_theme() {
 
 add_action('wp_ajax_idf_activate_theme', 'idf_activate_theme');
 add_action('wp_ajax_nopriv_idf_activate_theme', 'idf_activate_theme');
+
+function idf_activate_extension() {
+	if (isset($_POST['extension'])) {
+		$extension = $_POST['extension'];
+		if (!empty($extension)) {
+			$plugin_path = dirname(IDF_PATH).'/'.$extension.'/'.$extension.'.php';
+			activate_plugin($plugin_path);
+			echo 1;
+		}
+	}
+	exit;
+}
+
+add_action('wp_ajax_idf_activate_extension', 'idf_activate_extension');
+add_action('wp_ajax_nopriv_idf_activate_extension', 'idf_activate_extension');
 ?>

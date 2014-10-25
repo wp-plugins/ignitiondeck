@@ -22,18 +22,31 @@
 	width: auto;
 	max-width: 500px;
 	margin: 20px auto;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/*
 	-webkit-border-bottom-right-radius: 3px;
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomright: 3px;
 	-moz-border-radius-bottomleft: 3px;
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 3px;
+	*/
 }
 
 .idc_lightbox .project_image {
 	width: 100%;
 	background-size: cover;
 	background-position: center 50%;
+	/*
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	*/
 }
 .idc_lightbox .project_image  {
 	margin: 0;

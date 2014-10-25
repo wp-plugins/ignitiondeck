@@ -56,6 +56,13 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.1.0 =
+
+* Port admin styling from IDC/IDCF into IDF
+* New generic lightbox methods for cross-platform compatibility
+* Optimize loading of IDF scripts
+* Begin work on cross-platform social sharing template
+
 = 1.0.9 =
 
 * Extensions can now be activated via the extensions menu

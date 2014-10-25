@@ -1,5 +1,8 @@
 <?php
 
+//error_reporting(E_ALL);
+//@ini_set('display_errors', 1);
+
 /*
 Plugin Name: IgnitionDeck Framework
 URI: http://IgnitionDeck.com
@@ -15,13 +18,16 @@ define( 'IDF_PATH', plugin_dir_path(__FILE__) );
 include_once 'classes/class-idf.php';
 include_once 'idf-functions.php';
 include_once 'idf-admin.php';
+if (idf_platform() == 'idc') {
+	include_once 'idf-idc.php';
+}
 
 add_action( 'init', 'idf_textdomain' );
 function idf_textdomain() {
 	load_plugin_textdomain( 'idf', false, dirname( plugin_basename( __FILE__ ) ).'/languages/' );
 }
 
-add_action('init', 'idf_lightbox');
+add_action('wp_enqueue_scripts', 'idf_lightbox');
 
 function idf_lightbox() {
 	wp_register_script('idf-lite', plugins_url('js/idf-lite.js', __FILE__));
@@ -31,10 +37,13 @@ function idf_lightbox() {
 	wp_register_style('idf', plugins_url('css/idf.css', __FILE__));
 	wp_enqueue_script('jquery');
 	if (idf_enable_checkout()) {
+		$checkout_url = '';
 		$platform = idf_platform();
-		if ($platform == 'wc' && class_exists('WooCommerce') && !is_admin()) {
-			global $woocommerce;
-			$checkout_url = $woocommerce->cart->get_checkout_url();
+		if ($platform == 'wc' && !is_admin()) {
+			if (class_exists('WooCommerce')) {
+				global $woocommerce;
+				$checkout_url = $woocommerce->cart->get_checkout_url();
+			}
 		}
 		else if ($platform == 'edd' && class_exists('Easy_Digital_Downloads') && !is_admin()) {
 			$checkout_url = edd_get_checkout_uri();
@@ -55,7 +64,5 @@ function idf_lightbox() {
 	else {
 		wp_enqueue_script('idf-lite');
 	}
-	wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
-	wp_enqueue_style('magnific');
 }
 ?>

@@ -19,6 +19,7 @@ jQuery(document).ready(function() {
 	jQuery('#id_account').click(function(e) {
 		//e.preventDefault();
 	});
+
 	window.addEventListener('message', idfRegister, false);
 
 	// Themes Page

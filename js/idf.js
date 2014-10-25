@@ -41,8 +41,9 @@ jQuery(document).ready(function() {
 	}
 	jQuery.each(jQuery('.id-full .btn-container a, .level-binding, .ign-supportnow a'), function() {
 		var href = jQuery(this).attr('href');
+		//console.log(href);
 		if (href !== undefined) {
-			if (jQuery(this).attr('href').length > 1) {
+			if (href.length > 1 && href.indexOf('purchaseform') > 0) {
 				jQuery(this).attr('href', '.idc_lightbox');
 				jQuery(this).data('href', href);
 			}
@@ -95,51 +96,6 @@ jQuery(document).ready(function() {
 			});
 		}
 	});
-	function openLB(lbSource, clickLevel) {
-		jQuery.magnificPopup.open({
-			type: 'inline',
-			items: {
-				src: jQuery(lbSource)
-			},
-			callbacks: {
-				open: function() {
-					if (clickLevel != null) {
-						jQuery(document).trigger('idc_lightbox_level_select', clickLevel);
-
-						jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', clickLevel);
-						if (jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex') == -1) {
-							jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', 0);
-						}
-					}
-					else {
-						// clicked a support now button
-						jQuery(document).trigger('idc_lightbox_general');
-					}
-					var levelCount = jQuery('.idc_lightbox:visible select[name="level_select"] option').size();
-					if (levelCount == 1) {
-						//jQuery('.idc_lightbox:visible .lb_level_submit').click();
-						var selLevel = jQuery('.idc_lightbox:visible select[name="level_select"]').val();
-						var price = jQuery('.idc_lightbox:visible input.total').val();
-						if (price == 0 || price == undefined) {
-							//pwyw project
-						}
-					}
-					else if (levelCount == 0) {
-						jQuery('.idc_lightbox:visible .lb_level_submit').val('No Levels Available').attr('disabled', 'disabled');
-					}
-					jQuery('.idc_lightbox:visible input[name="total"]').change(function() {
-						var price = jQuery(this).val();
-						var cleanPrice = price.replace(/[^0-9\.]+/g, '');
-						console.log(cleanPrice);
-						jQuery(document).trigger('idc_lightbox_price_change', cleanPrice);
-					});
-				},
-				close: function() {
-					
-				}
-			}
-		});
-	}
 	jQuery(document).bind('idc_lightbox_price_change', function(event, price) {
 		jQuery('.idc_lightbox:visible input[name="total"]').val(price);
 		var levelIndex = jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex');
@@ -189,6 +145,72 @@ jQuery(document).ready(function() {
 		}
 	});
 });
+
+function openLB(lbSource, clickLevel) {
+	jQuery.magnificPopup.open({
+		type: 'inline',
+		items: {
+			src: jQuery(lbSource)
+		},
+		callbacks: {
+			open: function() {
+				if (clickLevel != null) {
+					jQuery(document).trigger('idc_lightbox_level_select', clickLevel);
+
+					jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', clickLevel);
+					if (jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex') == -1) {
+						jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', 0);
+					}
+				}
+				else {
+					// clicked a support now button
+					jQuery(document).trigger('idc_lightbox_general');
+				}
+
+				var levelCount = jQuery('.idc_lightbox:visible select[name="level_select"] option').size();
+				if (levelCount == 1) {
+					//jQuery('.idc_lightbox:visible .lb_level_submit').click();
+					var selLevel = jQuery('.idc_lightbox:visible select[name="level_select"]').val();
+					var price = jQuery('.idc_lightbox:visible input.total').val();
+					if (price == 0 || price == undefined) {
+						//pwyw project
+					}
+				}
+				else if (levelCount == 0) {
+					jQuery('.idc_lightbox:visible .lb_level_submit').val('No Levels Available').attr('disabled', 'disabled');
+				}
+				jQuery('.idc_lightbox:visible input[name="total"]').change(function() {
+					var price = jQuery(this).val();
+					var cleanPrice = price.replace(/[^0-9\.]+/g, '');
+					//console.log(cleanPrice);
+					jQuery(document).trigger('idc_lightbox_price_change', cleanPrice);
+				});
+			},
+			close: function() {
+				
+			}
+		}
+	});
+}
+
+function openLBGlobal(lbSource, openCallback, closeCallback) {
+	jQuery.magnificPopup.open({
+		type: 'inline',
+		items: {
+			src: jQuery(lbSource)
+		},
+		callbacks: {
+			open: function() {
+				if (openCallback !== undefined && openCallback !== null)
+					openCallback();
+			},
+			close: function() {
+				if (closeCallback !== undefined && closeCallback !== null)
+					closeCallback();
+			}
+		}
+	});
+}
 
 function adjustHeights(elem) {
 	var fontstep = 2;
