@@ -7,7 +7,7 @@
 Plugin Name: IgnitionDeck Framework
 URI: http://IgnitionDeck.com
 Description: An e-commerce toolkit for WordPress
-Version: 1.0.9
+Version: 1.1.0
 Author: Virtuous Giant
 Author URI: http://VirtuousGiant.com
 License: GPL2
