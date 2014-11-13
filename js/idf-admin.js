@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
 
 					//id: 'http://ignitiondeck.com/id/id-free-registration/',
 
-					src: 'http://ignitiondeck.com/id/id-launchpad-checkout/',
+					src: launchpad_link,
 				}
 
 				//srcAction: '#id_account'

@@ -4,7 +4,7 @@ Donate link: http://IgnitionDeck.com
 Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,10 @@ Grab code snippets, child theming guides, and API information on our [developer 
 == Screenshots ==
 
 == Changelog ==
+
+= 1.1.1 =
+
+* Add checks for SSL so that APIs can be used with or without SSL
 
 = 1.1.0 =
 

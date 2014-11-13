@@ -14,7 +14,11 @@ function idf_enable_checkout() {
 function idf_idcf_delivery() {
 	$plugins_path = plugin_dir_path(dirname(__FILE__));
 	if (!file_exists($plugins_path.'ignitiondeck-crowdfunding')) {
-		$idcf = file_get_contents('http://ignitiondeck.com/idf/idcf_latest.zip');
+		$prefix = 'http';
+		if (is_ssl()) {
+			$prefix = 'https';
+		}
+		$idcf = file_get_contents($prefix.'://ignitiondeck.com/idf/idcf_latest.zip');
 		if (!empty($idcf)) {
 			$put_idcf = file_put_contents($plugins_path.'idcf_latest.zip', $idcf);
 			$idcf_zip = new ZipArchive;
@@ -32,7 +36,11 @@ function idf_idcf_delivery() {
 function idf_fh_delivery() {
 	$themes_path = plugin_dir_path(dirname(dirname(__FILE__))).'themes/';
 	if (!file_exists($themes_path.'fivehundred')) {
-		$fh = file_get_contents('http://ignitiondeck.com/idf/fh_latest.zip');
+		$prefix = 'http';
+		if (is_ssl()) {
+			$prefix = 'https';
+		}
+		$fh = file_get_contents($prefix.'://ignitiondeck.com/idf/fh_latest.zip');
 		if (!empty($fh)) {
 			$put_fh = file_put_contents($themes_path.'fh_latest.zip', $fh);
 			$fh_zip = new ZipArchive;

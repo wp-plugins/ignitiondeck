@@ -44,7 +44,11 @@ function idf_extension_list() {
 			$plugin_array[] = $plugin['basename'];
 		}
 	}*/
-	$api = 'http://ignitiondeck.com/id/?action=get_extensions';
+	$prefix = 'http';
+	if (is_ssl()) {
+		$prefix = 'https';
+	}
+	$api = $prefix.'://ignitiondeck.com/id/?action=get_extensions';
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_URL, $api);
@@ -65,7 +69,11 @@ function idf_theme_list() {
 	}
 	$active_theme = wp_get_theme();
 	$active_name = $active_theme->Name;
-	$api = 'http://ignitiondeck.com/id/?action=get_themes';
+	$prefix = 'http';
+	if (is_ssl()) {
+		$prefix = 'https';
+	}
+	$api = $prefix.'://ignitiondeck.com/id/?action=get_themes';
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_URL, $api);
@@ -103,6 +111,11 @@ function idf_admin_enqueues() {
 	wp_localize_script('idf-admin', 'idf_admin_siteurl', site_url());
 	wp_localize_script('idf-admin', 'idf_admin_ajaxurl', $idf_ajaxurl);
 	wp_localize_script('idf-admin', 'idf_platform', $platform);
+	$prefix = 'http';
+	if (is_ssl()) {
+		$prefix = 'https';
+	}
+	wp_localize_script('idf-admin', 'launchpad_link', $prefix.'://ignitiondeck.com/id/id-launchpad-checkout/');
 }
 
 add_action('admin_init', 'filter_idcf_admin');
