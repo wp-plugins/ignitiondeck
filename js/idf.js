@@ -44,6 +44,17 @@ jQuery(document).ready(function() {
 		//console.log(href);
 		if (href !== undefined) {
 			if (href.length > 1 && href.indexOf('purchaseform') > 0) {
+				// idcf
+				jQuery(this).attr('href', '.idc_lightbox');
+				jQuery(this).data('href', href);
+			}
+			else if (href.length > 1 && href.indexOf('add-to-cart') > 0) {
+				// wc
+				jQuery(this).attr('href', '.idc_lightbox');
+				jQuery(this).data('href', href);
+			}
+			else if (href.length > 1 && href.indexOf('add_to_cart') > 0) {
+				// edd
 				jQuery(this).attr('href', '.idc_lightbox');
 				jQuery(this).data('href', href);
 			}
