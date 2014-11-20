@@ -18,6 +18,8 @@ define( 'IDF_PATH', plugin_dir_path(__FILE__) );
 include_once 'classes/class-idf.php';
 include_once 'idf-functions.php';
 include_once 'idf-admin.php';
+include_once 'idf-roles.php';
+include_once 'idf-wp.php';
 if (idf_platform() == 'idc') {
 	include_once 'idf-idc.php';
 }
