@@ -9,6 +9,7 @@ function idf_set_roles() {
 	}
 	get_currentuserinfo();
 	$user_id = $current_user->ID;
+	$user = get_user_by('id', $user_id);
 	// setup general roles for product suite
 	if (current_user_can('administrator') && !current_user_can('create_edit_projects')) {
 		$admin = get_role('administrator');
@@ -42,7 +43,6 @@ function idf_set_roles() {
 	if ($creator) {
 		if (!current_user_can('create_edit_projects')) {
 			if ($user_id > 0) {
-				$user = get_user_by('id', $user_id);
 				if (!empty($user)) {
 					$user->add_cap('create_edit_projects');
 				}

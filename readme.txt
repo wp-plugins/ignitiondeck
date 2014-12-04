@@ -56,6 +56,10 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.1.3 =
+
+* (IDE) Add new roles and capabilities for the purposes of editing media on the front-end submission form
+
 = 1.1.2 =
 
 * Fix issue preventing WC and EDD levels from linking to lightbox
