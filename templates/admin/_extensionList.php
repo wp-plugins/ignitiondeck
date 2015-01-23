@@ -1,10 +1,13 @@
 <div class="wrap">
-	<h2><?php _e('IgnitionDeck Extensions', 'idf'); ?></h2>
+	<div class="extension_header">
+		<h1><?php _e('IgnitionDeck Extensions', 'idf'); ?></h1>
+	</div>
 	<?php
 	foreach ($data as $item) {
 		$title = $item->title;
 		$desc = $item->short_desc;
 		$link = $item->link;
+		$doclink = $item->doclink;
 		$thumbnail = $item->thumbnail;
 		$basename = $item->basename;
 		$installed = false;
@@ -26,6 +29,9 @@
 			<p class="extension-desc"><?php echo $desc; ?></p>
 			<div class="extension-link">
 				<button class="button <?php echo (!$active && !$installed ? 'button-primary' : 'active-installed'); ?>" <?php echo (!empty($link) ? 'onclick="location.href='.$link.'"' : ''); ?> <?php echo ($active ? 'disabled="disabled"' : ''); ?> data-extension="<?php echo $basename; ?>"><?php echo $text; ?></button>
+				<?php if (!empty($doclink)) { ?>
+					<button class="button" onclick="window.open('<?php echo $doclink; ?>')"><?php _e('Docs', 'idf'); ?></button>
+				<?php } ?>
 			</div>
 		</div>
 	<?php } ?>

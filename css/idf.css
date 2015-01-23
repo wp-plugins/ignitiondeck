@@ -169,6 +169,10 @@
 .idc_lightbox .form-row.total label {
 	padding-bottom: 0;
 }
+.ignitiondeck.idc_lightbox .form-row.total input {
+	padding: 15px;
+	line-height: normal;
+}
 .ignitiondeck.idc_lightbox form .form-row .idc-dropdown__select {
 	white-space: nowrap;
 }

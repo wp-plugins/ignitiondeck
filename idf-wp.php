@@ -1,3 +1,4 @@
+			if (!empty($user)) {
 <?php
 /*
 This file is for general functions that modify the WordPress defaults
