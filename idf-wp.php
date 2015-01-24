@@ -1,4 +1,3 @@
-			if (!empty($user)) {
 <?php
 /*
 This file is for general functions that modify the WordPress defaults
@@ -7,7 +6,7 @@ This file is for general functions that modify the WordPress defaults
 add_action('pre_get_posts', 'idf_restrict_media_view');
 
 function idf_restrict_media_view($query) {
-	if ($query->get('post_type') == 'attachment') {
+	if ($query->get('post_type') == 'attachment' && !current_user_can('manage_options')) {
 		if (!current_user_can('editor')) {
 			if (is_multisite()) {
 				require (ABSPATH . WPINC . '/pluggable.php');

@@ -56,6 +56,10 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.1.5 =
+
+* Fix header error caused by last update
+
 = 1.1.4 =
 
 * Fix bug preventing admins from viewing media
