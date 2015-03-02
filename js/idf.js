@@ -36,6 +36,9 @@ jQuery(document).ready(function() {
 			}
 		});
 	}
+	else if (idf_platform == 'itexchange') {
+		
+	}
 	else {
 
 	}
@@ -127,11 +130,32 @@ jQuery(document).ready(function() {
 		}
 		var formAction = jQuery('.idc_lightbox:visible form').attr('action');
 		var productID = jQuery('.idc_lightbox:visible select[name="level_select"] option:selected').data('id');
+		var error = false;
 		if (idf_platform == 'wc') {
 			formAction = idf_checkout_url + '?add-to-cart=' + productID;
 		}
 		else if (idf_platform == 'edd') {
 			formAction = idf_checkout_url + '?edd_action=add_to_cart&download_id=' + productID + '&edd_options[price_id]=' + (selLevel - 1);
+		}
+		// If commerce platform is iThemes Exchange
+		else if (idf_platform == 'itexchange') {
+			// Setting URL of the level selected
+			var level = jQuery('.level_select').val();
+			idf_checkout_urls = JSON.parse(idf_checkout_url);
+			//console.log('itexchange idf_checkout_urls: ', idf_checkout_urls, ', level: ', level);
+			formAction = idf_checkout_urls[level]['url'] + '?iditexch-solid=1';
+			// Sending ajax to add the selected level's paired product to exchange cart
+			jQuery.ajax({
+				url: idf_ajaxurl,
+				type: 'POST',
+				data: {action: 'iditexch_add_product_to_cart', product_id: idf_checkout_urls[level]['product']},
+				success: function () {
+					jQuery('.idc_lightbox:visible form').attr('action', formAction);
+					jQuery('.idc_lightbox:visible form').submit();
+				}
+			});
+			// To stop the form from default submission
+			error = true;
 		}
 		else {
 			if (idf_platform == 'idc') {
@@ -140,7 +164,6 @@ jQuery(document).ready(function() {
 			formAction = formAction + '&level=' + selLevel + '&price=' + price;
 		}
 		jQuery('.idc_lightbox:visible form').attr('action', formAction);
-		var error = false;
 		if (pwyw) {
 			if (price <= 0) {
 				var levelIndex = jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex');

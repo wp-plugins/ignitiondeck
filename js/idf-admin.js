@@ -58,6 +58,29 @@ jQuery(document).ready(function() {
 	if (idf_platform !== 'legacy') {
 		jQuery('input[value="pwyw"]').attr('disabled', 'disabled');
 	}
+	
+	// For iTheme exchange functions
+	if (idf_platform == 'itexchange') {
+		jQuery('span[addlevel]').click(function(e) {
+			//console.log('itexc add level function called');
+			// Calling function with delay so that the other click event for span[addlevel] does its work
+			var time_delay = setTimeout(function () {
+				//console.log('timeout function called');
+				var element_number = parseInt(jQuery('div[levels]').attr('levels'));
+				jQuery('#ign_level'+ element_number +'title').parent('div').after('<div><label for="iditexch_product_id_'+ element_number +'">Exchange Product ID</label><input type="text" value="" id="iditexch_product_id_'+ element_number +'" name="levels['+ element_number +'][iditexch_product_id]"></div>');
+				clearTimeout(time_delay);
+			}, 200);
+		});
+		
+		if (jQuery('.iditexch-moveable-fields').length > 0) {
+			jQuery('.iditexch-moveable-fields').each(function(index, element) {
+				var element_number = parseInt(jQuery(this).attr('level'));
+				console.log('each function, element: ', element_number);
+				var tomove = jQuery('.iditexch-moveable-fields[level='+ element_number +']');
+				jQuery('#ign_level_'+ element_number).parent('div').append(tomove);
+			});
+		}
+	}
 
 });
 function idfRegister(e) {
