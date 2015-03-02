@@ -56,6 +56,12 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.1.6 =
+
+* New function for validating and returning linkable URLs: id_validate_url($url)
+* Early prep for integration with iThemes Exchange
+* Port idc order lightbox functionality to ID Social
+
 = 1.1.5 =
 
 * Fix header error caused by last update
