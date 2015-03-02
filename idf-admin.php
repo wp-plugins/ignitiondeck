@@ -21,7 +21,7 @@ function idf_main_menu() {
 	$platform = idf_platform();
 	$plugins_path = plugin_dir_path(dirname(__FILE__));
 	if (isset($_POST['commerce_submit'])) {
-		$platform = esc_attr($_POST['commerce_selection']);
+		$platform = sanitize_text_field($_POST['commerce_selection']);
 		update_option('idf_commerce_platform', $platform);
 	}
 	if (isset($_POST['update_idcf'])) {
