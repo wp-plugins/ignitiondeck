@@ -4,7 +4,7 @@ Donate link: http://IgnitionDeck.com
 Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising
 Requires at least: 3.2
 Tested up to: 4.1.1
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,11 @@ Grab code snippets, child theming guides, and API information on our [developer 
 == Screenshots ==
 
 == Changelog ==
+
+= 1.1.7 =
+
+* Security Fix: Remove nopriv option for theme/extension activation and require that user can manage_options
+* Security Fix: Update our media button priveleges in order to ensure that users can only edit media when on a project they own, or when creating a new project
 
 = 1.1.6 =
 

@@ -21,33 +21,47 @@ function idf_restrict_media_view($query) {
 	}
 }
 
-add_action('init', 'idf_add_media_buttons');
+add_action('wp', 'idf_add_media_buttons');
 
 function idf_add_media_buttons() {
-	if (is_multisite()) {
-		require (ABSPATH . WPINC . '/pluggable.php');
-	}
-	global $current_user;
-	$add_cap = false;
-	get_currentuserinfo();
-	$user_id = $current_user->ID;
-	$user = get_user_by('id', $user_id);
-	if (current_user_can('create_edit_projects')) {
-		if (!current_user_can('upload_files')) {
-			if (!empty($user)) {
-				$user->add_cap('upload_files');
+	if (is_user_logged_in()) {
+		if (is_multisite()) {
+			require (ABSPATH . WPINC . '/pluggable.php');
+		}
+		global $current_user;
+		$add_cap = false;
+		get_currentuserinfo();
+		$user_id = $current_user->ID;
+		$user = get_user_by('id', $user_id);
+		$dash_settings = get_option('md_dash_settings');
+		if (!empty($dash_settings)) {
+			$dash_id = $dash_settings['durl'];
+		}
+		if (isset($dash_id) && is_page($dash_id) && current_user_can('create_edit_projects')) {
+			if (!current_user_can('upload_files')) {
+				if (!empty($user)) {
+					$user->add_cap('upload_files');
+				}
+			}
+			if (isset($_GET['create_project']) && $_GET['create_project']) {
+				if (!current_user_can('publish_posts')) {
+					$pass = true;
+				}
+			}
+			else if (isset($_GET['edit_project'])) {
+				$post_id = absint($_GET['edit_project']);
+				$post = get_post($post_id);
+				if (!empty($post->ID) && $post->post_author == $user_id) {
+					if (!current_user_can('publish_posts')) {
+						$pass = true;
+					}
+				}
+				
 			}
 		}
 	}
-	if (isset($_GET['create_project']) || isset($_GET['edit_project'])) {
-		if (!current_user_can('publish_posts')) {
-			idc_add_upload_cap($user);
-		}
-	}
-	else if (isset($_SERVER['HTTP_REFERER'])) {
-		if (strpos($_SERVER['HTTP_REFERER'], 'create_project') || strpos($_SERVER['HTTP_REFERER'], 'edit_project')) {
-			idc_add_upload_cap($user);
-		}
+	if ($pass) {
+		idc_add_upload_cap($user);
 	}
 	else {
 		idc_remove_upload_cap($user);

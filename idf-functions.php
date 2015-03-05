@@ -168,7 +168,7 @@ add_action('wp_ajax_idf_registered', 'idf_registered');
 add_action('wp_ajax_nopriv_idf_registered', 'idf_registered');
 
 function idf_activate_theme() {
-	if (isset($_POST['theme'])) {
+	if (isset($_POST['theme']) && current_user_can('manage_options')) {
 		$slug = esc_attr($_POST['theme']);
 		$slug = str_replace('500', 'fivehundred', $slug);
 		switch_theme($slug);
@@ -178,10 +178,9 @@ function idf_activate_theme() {
 }
 
 add_action('wp_ajax_idf_activate_theme', 'idf_activate_theme');
-add_action('wp_ajax_nopriv_idf_activate_theme', 'idf_activate_theme');
 
 function idf_activate_extension() {
-	if (isset($_POST['extension'])) {
+	if (isset($_POST['extension']) && current_user_can('manage_options')) {
 		$extension = $_POST['extension'];
 		if (!empty($extension)) {
 			$plugin_path = dirname(IDF_PATH).'/'.$extension.'/'.$extension.'.php';
@@ -193,7 +192,6 @@ function idf_activate_extension() {
 }
 
 add_action('wp_ajax_idf_activate_extension', 'idf_activate_extension');
-add_action('wp_ajax_nopriv_idf_activate_extension', 'idf_activate_extension');
 
 /**
  * AJAX function, to set the iT Exchange product in the cart
