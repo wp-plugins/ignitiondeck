@@ -24,6 +24,7 @@ function idf_restrict_media_view($query) {
 add_action('wp', 'idf_add_media_buttons');
 
 function idf_add_media_buttons() {
+	$pass = false;
 	if (is_user_logged_in()) {
 		if (is_multisite()) {
 			require (ABSPATH . WPINC . '/pluggable.php');
