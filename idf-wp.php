@@ -36,6 +36,7 @@ function idf_add_media_buttons() {
 		$user = get_user_by('id', $user_id);
 		$dash_settings = get_option('md_dash_settings');
 		if (!empty($dash_settings)) {
+			$dash_settings = maybe_unserialize($dash_settings);
 			$dash_id = $dash_settings['durl'];
 		}
 		if (isset($dash_id) && is_page($dash_id) && current_user_can('create_edit_projects')) {
