@@ -98,12 +98,15 @@ function idf_additional_enqueues() {
 
 function idf_admin_enqueues() {
 	wp_register_script('idf-admin', plugins_url('/js/idf-admin.js', __FILE__));
+	wp_register_script('idf-admin-media', plugins_url('/js/idf-admin-media.js', __FILE__));
 	wp_register_style('idf-admin', plugins_url('/css/idf-admin.css', __FILE__));
 	wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
 	wp_register_script('magnific', plugins_url('lib/magnific/magnific.js', __FILE__));
 	wp_enqueue_script('jquery');
+	wp_enqueue_media();
 	wp_enqueue_script('magnific');
 	wp_enqueue_script('idf-admin');
+	wp_enqueue_script('idf-admin-media');
 	wp_enqueue_style('magnific');
 	wp_enqueue_style('idf-admin');
 	$idf_ajaxurl = site_url('/wp-admin/admin-ajax.php');

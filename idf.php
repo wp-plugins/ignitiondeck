@@ -7,7 +7,7 @@
 Plugin Name: IgnitionDeck Framework
 URI: http://IgnitionDeck.com
 Description: An e-commerce toolkit for WordPress
-Version: 1.1.8
+Version: 1.1.9
 Author: Virtuous Giant
 Author URI: http://VirtuousGiant.com
 License: GPL2
@@ -30,6 +30,7 @@ function idf_textdomain() {
 }
 
 add_action('wp_enqueue_scripts', 'idf_lightbox');
+add_action('login_enqueue_scripts', 'idf_lightbox');
 
 function idf_lightbox() {
 	wp_register_script('idf-lite', plugins_url('js/idf-lite.js', __FILE__));
@@ -49,6 +50,20 @@ function idf_lightbox() {
 		}
 		else if ($platform == 'edd' && class_exists('Easy_Digital_Downloads') && !is_admin()) {
 			$checkout_url = edd_get_checkout_uri();
+		}
+		else if ($platform == 'itexchange' && class_exists('IT_Exchange') && !is_admin()) {
+			// Getting checkout URL for iT exchange product
+			global $post;
+			$post_id = $post->ID;
+			$checkout_links = array();
+			// Get levels and setting url for each level
+			$number_of_levels = get_post_meta( $post_id, "ign_product_level_count", true );
+			for ($i=1 ; $i <= $number_of_levels ; $i++) { 
+				$iditexch_project_id = get_post_meta($post_id, 'iditexch_level_pairing_' . $i, true);
+				$checkout_links[$i]['url'] = get_permalink( $iditexch_project_id );
+				$checkout_links[$i]['product'] = $iditexch_project_id;
+			}
+			$checkout_url = json_encode($checkout_links);
 		}
 		wp_enqueue_style('magnific');
 		wp_enqueue_style('idf');

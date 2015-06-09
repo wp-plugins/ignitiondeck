@@ -56,6 +56,15 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.1.9 =
+
+* Fix issue preventing users without file_get_contents() capabilities from downloading IDCF and 500
+* Fix issue preventing non-admin logged in users from viewing media galleries
+* Fix issue with undeclared user variable that was breaking javascript chain when trying to manage user roles
+* Update Launchpad registration schema
+* New global functions for adding media via custom button, getting query string prefix, and getting client IP
+* Properly enqueue scripts on login screen for ID Social support
+
 = 1.1.8 =
 
 * use maybe_userialize on dashboard settings when setting WP roles to solve offset error

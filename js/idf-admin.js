@@ -84,21 +84,26 @@ jQuery(document).ready(function() {
 
 });
 function idfRegister(e) {
-	//console.log(e.data);
-	if (e.data == 'idf: registered') {
-		// they have completed registration
-		setTimeout(function() {
-			jQuery.magnificPopup.close();
-			jQuery.ajax({
-				url: idf_admin_ajaxurl,
-				type: 'POST',
-				data: {action: 'idf_registered'},
-				success: function(res) {
-					//console.log(res);
-					location.reload();
-				}
-			});
-		}, 1500);
-		
+	//console.log(e.data.response);
+	if (e.data.response !== undefined) {
+		if (e.data.response == 'idf: registered') {
+			// they have completed registration
+			var email;
+			if (e.data.customer !== undefined) {
+				email = e.data.customer;
+			}
+			setTimeout(function() {
+				jQuery.magnificPopup.close();
+				jQuery.ajax({
+					url: idf_admin_ajaxurl,
+					type: 'POST',
+					data: {action: 'idf_registered', Email: email},
+					success: function(res) {
+						//console.log(res);
+						location.reload();
+					}
+				});
+			}, 1500);
+		}
 	}
 }

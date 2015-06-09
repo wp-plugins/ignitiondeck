@@ -6,7 +6,7 @@ This file is for general functions that modify the WordPress defaults
 add_action('pre_get_posts', 'idf_restrict_media_view');
 
 function idf_restrict_media_view($query) {
-	if ($query->get('post_type') == 'attachment' && !current_user_can('manage_options')) {
+	if ($query->get('post_type') == 'attachment' && !current_user_can('manage_options') && is_admin()) {
 		if (!current_user_can('editor')) {
 			if (is_multisite()) {
 				require (ABSPATH . WPINC . '/pluggable.php');
@@ -61,12 +61,12 @@ function idf_add_media_buttons() {
 				
 			}
 		}
-	}
-	if ($pass) {
+		if ($pass) {
 		idc_add_upload_cap($user);
-	}
-	else {
-		idc_remove_upload_cap($user);
+		}
+		else {
+			idc_remove_upload_cap($user);
+		}
 	}
 }
 

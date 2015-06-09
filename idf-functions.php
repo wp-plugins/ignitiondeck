@@ -18,7 +18,17 @@ function idf_idcf_delivery() {
 		if (is_ssl()) {
 			$prefix = 'https';
 		}
-		$idcf = file_get_contents($prefix.'://ignitiondeck.com/idf/idcf_latest.zip');
+		if ( ini_get('allow_url_fopen') ) {
+			$idcf = file_get_contents($prefix.'://ignitiondeck.com/idf/idcf_latest.zip');
+		} else {
+			$url = $prefix.'://ignitiondeck.com/idf/idcf_latest.zip';
+			$idcf_curl = curl_init();
+			curl_setopt($idcf_curl, CURLOPT_URL, $url);
+			curl_setopt($idcf_curl, CURLOPT_HEADER, 0);
+			curl_setopt($idcf_curl, CURLOPT_RETURNTRANSFER, 1);
+			$idcf = curl_exec($idcf_curl);
+			curl_close($idcf_curl);
+		}
 		if (!empty($idcf)) {
 			$put_idcf = file_put_contents($plugins_path.'idcf_latest.zip', $idcf);
 			$idcf_zip = new ZipArchive;
@@ -40,7 +50,17 @@ function idf_fh_delivery() {
 		if (is_ssl()) {
 			$prefix = 'https';
 		}
-		$fh = file_get_contents($prefix.'://ignitiondeck.com/idf/fh_latest.zip');
+		if ( ini_get('allow_url_fopen') ) {
+			$fh = file_get_contents($prefix.'://ignitiondeck.com/idf/fh_latest.zip');
+		} else {
+			$url = $prefix.'://ignitiondeck.com/idf/fh_latest.zip';
+			$fh_curl = curl_init();
+			curl_setopt($fh_curl, CURLOPT_URL, $url);
+			curl_setopt($fh_curl, CURLOPT_HEADER, 0);
+			curl_setopt($fh_curl, CURLOPT_RETURNTRANSFER, 1);
+			$fh = curl_exec($fh_curl);
+			curl_close($fh_curl);
+		}
 		if (!empty($fh)) {
 			$put_fh = file_put_contents($themes_path.'fh_latest.zip', $fh);
 			$fh_zip = new ZipArchive;
@@ -157,15 +177,67 @@ function id_validate_url($url_string, $http_secure = false) {
 	}
 }
 
+/**
+ * function for getting client's IP address
+ */
+function idf_client_ip() {
+    $ipaddress = '';
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}
+
+/**
+ * Function to get the prefix for using before appended query string variables
+ */
+function idf_get_querystring_prefix() {
+	// Get permalink structure for '?' or '&'
+	$prefix = '?';
+	$permalink_structure = get_option('permalink_structure');
+	if (empty($permalink_structure)) {
+		$prefix = '&';
+	}
+	return $prefix;
+}
+
+/**
+ * Function to get the layout of image, depending on it's width and size
+ */
+function idf_image_layout_by_dimensions($width, $height) {
+	if ($width > $height) {
+		$image = "landscape";
+	} else if ($width < $height) {
+		$image = "portrait";
+	} else {
+		$image = "square";
+	}
+	return $image;
+}
+
 function idf_registered() {
 	idf_idcf_delivery();
 	idf_fh_delivery();
 	update_option('idf_registered', 1);
+	if (isset($_POST['Email'])) {
+		$email = esc_attr($_POST['Email']);
+		update_option('id_account', $email);
+	}
 	exit;
 }
 
 add_action('wp_ajax_idf_registered', 'idf_registered');
-add_action('wp_ajax_nopriv_idf_registered', 'idf_registered');
 
 function idf_activate_theme() {
 	if (isset($_POST['theme']) && current_user_can('manage_options')) {
