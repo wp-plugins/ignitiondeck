@@ -1,7 +1,7 @@
 === IgnitionDeck ===
 Contributors: virtuousgiant
 Donate link: http://IgnitionDeck.com
-Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising
+Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising, donation
 Requires at least: 3.2
 Tested up to: 4.2.2
 Stable tag: 1.1.8
