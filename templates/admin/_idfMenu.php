@@ -43,7 +43,7 @@
 											<option value="wc" <?php echo (isset($platform) && $platform == 'wc' ? 'selected="selected"' : ''); ?>><?php _e('WooCommerce', 'idf'); ?></option>
 											<option value="edd" <?php echo (isset($platform) && $platform == 'edd' ? 'selected="selected"' : ''); ?>><?php _e('Easy Digital Downloads', 'idf'); ?></option>
 											<option value="legacy" <?php echo (isset($platform) && $platform == 'legacy' ? 'selected="selected"' : ''); ?>><?php _e('Legacy IgnitionDeck', 'idf'); ?></option>
-											<!--<option value="itexchange" <?php echo (isset($platform) && $platform == 'itexchange' ? 'selected="selected"' : ''); ?>><?php _e('iThemes Exchange', 'idf'); ?></option>-->
+											<option value="itexchange" <?php echo (isset($platform) && $platform == 'itexchange' ? 'selected="selected"' : ''); ?>><?php _e('iThemes Exchange', 'idf'); ?></option>
 										</select>
 									</p>
 								</div>
